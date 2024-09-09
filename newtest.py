@@ -7,9 +7,8 @@ from together import Together
 
 app = Flask(__name__)
 
-# Allow CORS from http://localhost:3000 specifically
+# Allow CORS from all origins
 CORS(app, resources={r"/*": {"origins": "*"}})
-
 
 # Load the datasets
 laws_data = pd.read_csv('top_sections.csv')
@@ -79,5 +78,4 @@ def get_laws_and_cases():
         'ipc_laws': ipc_laws
     })
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# No need for app.run() here, since Gunicorn will handle it

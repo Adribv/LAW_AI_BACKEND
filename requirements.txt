@@ -1,0 +1,7 @@
+gunicorn
+Flask
+flask-cors
+pandas
+sentence-transformers
+torch
+together  # Don't forget to include other dependencies you are using.
